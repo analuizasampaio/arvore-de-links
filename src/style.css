@@ -1,0 +1,95 @@
+/** 
+Style based in Camilo Michelleto Card Formula on
+https://codepen.io/camilo-micheletto/pen/abwepjZ
+-------------------------------------------------------------------------
+**/
+
+*,
+*:is(::before, ::after) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-text: hsl(0, 0%, 15%);
+  --clr-bg: hsl(0, 0%, 98%);
+  --clr-card: hsl(50deg, 45%, 97%);
+  --clr-link: rgb(247, 217, 199);
+  --clr-link-hover: rgb(255, 154, 92);
+  --clr-text-hover: hsl(50deg, 45%, 97%);
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+}
+
+.card {
+  display: grid;
+  gap: 2ch;
+  min-width: 500px;
+  max-width: 320px;
+  background-color: var(--clr-card);
+  border-radius: 12px;
+  box-shadow:
+    4px 4px 3px -14px rgba(0, 0, 0, 0.02),
+    12px 12px 10px -14px rgba(0, 0, 0, 0.03),
+    30px 30px 24px -14px rgba(0, 0, 0, 0.05);
+  color: var(--clr-text);
+  padding-block-end: 3ch;
+  overflow: hidden;
+}
+
+.card > * + * {
+  padding-inline: 3vmin;
+}
+
+.card__img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+.card__header .title {
+  font-size: 1.8rem;
+}
+
+.card__body {
+  display: grid;
+  gap: 1ch;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.card__link-button {
+    display: grid;
+    gap: 2ch;
+    min-width: 200px;
+    min-height: 55px;
+    border: 1px solid var(--clr-link);
+    margin-block-end: 3ch;
+    border-radius: 12px;
+    box-shadow:
+      4px 4px 3px -14px rgba(0, 0, 0, 0.02),
+      12px 12px 10px -14px rgba(0, 0, 0, 0.03),
+      30px 30px 24px -14px rgba(0, 0, 0, 0.05);
+    background-color: var(--clr-link);
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+}
+
+.card__link-button:hover{
+    background-color: var(--clr-link-hover);
+    border-color: var(--clr-link-hover);    
+    color: var(--clr-text-hover);
+}   
+
+ul {
+    list-style: none;
+}
